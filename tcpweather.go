@@ -7,7 +7,7 @@ import (
 	"strings"
 )
 
-func doDial(host, port, cmd string) {
+func doDial(host, port string) {
 	conn, err := net.Dial("tcp", host+":"+port)
 	if err != nil {
 		fmt.Printf("Error: %v", err)
@@ -40,8 +40,7 @@ func doDial(host, port, cmd string) {
 }
 
 func main() {
-	cmd := "geoip"
 	host := "rainmaker.wunderground.com"
 	port := "23"
-	doDial(host, port, cmd)
+	doDial(host, port)
 }
